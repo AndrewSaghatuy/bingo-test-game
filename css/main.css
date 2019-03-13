@@ -1,0 +1,51 @@
+body{
+    background:#000;
+    color:#FFF;
+    font-size: 20px;
+    font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+    margin:0;
+    padding:0;
+    width:1349px;
+}
+
+#bingo-card{
+    background:#FFF;
+    color:#000;
+    position:relative;
+    margin:0 auto;
+    width:377px;
+}
+#bingo-card table{
+    color:#000;
+}
+#bingo-card table th, #bingo-card table td {
+    padding: 10px;
+    border: 2px #666 solid;
+    text-align: center;
+    font-size: 24px;
+}
+#bingo-card table td{
+    cursor:pointer;
+}
+
+#buttons{
+    float:right;
+    text-align:center;
+    width:20%;
+}
+
+#btn-bingo{
+    width:80px;
+    height:80px;
+    background:#0D0;
+    font-weight:bold;
+    border-color:#999;
+    cursor:pointer;
+    border-radius:50%;
+    font-size:17px;
+}
+
+#free {
+    background-color: #F66;
+    cursor:default;
+}
