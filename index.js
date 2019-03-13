@@ -1,9 +1,12 @@
-const express = require('express'),
-      app = express();
+const express = require('express');
+const app = express();
+const path = require('path');
+
+app.use('/public/css',express.static(__dirname +'/public/css'));
 
 /*Main page application*/
 app.get('/', function (req, res) {
-   res.send('Hello server');
+    res.sendFile(path.join(__dirname + '/public/html/index.html'));
 });
 
 /*Generate a new bingo card*/
