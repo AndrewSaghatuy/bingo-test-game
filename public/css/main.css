@@ -26,20 +26,30 @@ body{
 }
 
 #buttons{
-    float:right;
-    text-align:center;
-    width:20%;
+    display: block;
+    position: relative;
+    margin: 10px auto;
+    width: 200px;
 }
 
-#btn-bingo{
-    width:80px;
-    height:80px;
+#buttons div {
+    position: relative;
+    float: left;
+}
+
+#btn-bingo, #btn-generate{
+    width:100px;
+    height:100px;
     background:#0D0;
     font-weight:bold;
-    border-color:#999;
+    border-color: #F66;
     cursor:pointer;
     border-radius:50%;
     font-size:17px;
+}
+
+#btn-generate {
+    background: #bcaa2d;
 }
 
 #free {
