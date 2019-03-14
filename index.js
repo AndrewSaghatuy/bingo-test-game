@@ -4,7 +4,7 @@ const path = require('path');
 
 var bCards = require("./libraries/b-cards");
 
-app.use('/public/css',express.static(__dirname +'/public/css'));
+app.use('/public',express.static(__dirname +'/public'));
 
 /*Main page application*/
 app.get('/', function (req, res) {
