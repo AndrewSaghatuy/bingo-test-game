@@ -15,9 +15,14 @@ body{
 #bingo-card table{
     color:#000;
 }
+
+#bingo-card table th {
+    color: #31d014;
+}
+
 #bingo-card table th, #bingo-card table td {
     padding: 10px;
-    border: 2px #666 solid;
+    border: 2px #c40d0d solid;
     text-align: center;
     font-size: 24px;
 }
