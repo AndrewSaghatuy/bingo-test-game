@@ -8,21 +8,30 @@ var bNumbers = require("./libraries/b-numbers");
 
 app.use(express.static(__dirname));
 
+var intervalGenerate = null;
+
 /*Main page application*/
 app.get('/', function (req, res) {
+    clearInterval(intervalGenerate);
     res.sendFile(path.join(__dirname + '/public/html/index.html'));
 });
 
 /*Generate a new bingo card*/
 app.post('/generate', function (req, res) {
+    clearInterval(intervalGenerate);
     res.send({'cardsNumbers' : new bCards().anCard()});
 });
 
 /*Generate a new bingo card*/
 app.post('/get-numbers', function (req, res) {
-    var intervalGenerate = setInterval(function() {
+    intervalGenerate = setInterval(function() {
         io.emit('randNumbers', new bNumbers().generateNumber());
     }, 5000);
+});
+
+/*Stop interval generate*/
+app.post('/stop-generate', function (req, res) {
+    clearInterval(intervalGenerate);
 });
 
 /*Connection to socket*/

@@ -70,6 +70,10 @@ body{
 }
 
 #bingo-number span {
+    display: none;
     font-size: 65px;
-    color: #e94848;
+    border: 1px solid #8a6767;
+    color: #c0cabf;
+    padding: 5px;
+    margin: 10px;
 }
