@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
+var bCards = require("./libraries/b-cards");
+
 app.use('/public/css',express.static(__dirname +'/public/css'));
 
 /*Main page application*/
@@ -10,8 +12,8 @@ app.get('/', function (req, res) {
 });
 
 /*Generate a new bingo card*/
-app.post('/', function (req, res) {
-//...
+app.post('/generate', function (req, res) {
+    res.send({'cardsNumbers' : new bCards().anCard()});
 });
 
 /*Set localhost port*/
