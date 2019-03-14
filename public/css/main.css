@@ -46,6 +46,7 @@ body{
     cursor:pointer;
     border-radius:50%;
     font-size:17px;
+    margin: 5px;
 }
 
 #btn-generate {
@@ -60,4 +61,15 @@ body{
 #free {
     background-color: #F66;
     cursor:default;
+}
+
+#bingo-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#bingo-number span {
+    font-size: 65px;
+    color: #e94848;
 }

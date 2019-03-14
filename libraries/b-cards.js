@@ -1,9 +1,12 @@
 /*Generate cards*/
 var bCards = function () {
     var usedNums = new Array(76);
+
+    var min = 1;
+    var max = 75;
     
     this.getNum = function () {
-        return Math.floor(Math.random() * 75);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     };
     
     this.newCard = function () {
@@ -13,7 +16,7 @@ var bCards = function () {
             
         for(var i=0; i < 24; i++) {
             do {
-                newNum = (colPlace[i] * 15) + this.getNum() + 1;
+                newNum = colPlace[i] + this.getNum();
                 sqArray[i] = newNum;
             }
             while (usedNums[newNum]);

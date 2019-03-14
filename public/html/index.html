@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>B I N G O!</title>
     <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
     <script type = "text/javascript" src="/public/javascript/main.js"></script>
 </head>
 <body>
@@ -54,6 +55,10 @@
         </tr>
     </table>
 </div>
+<div id="bingo-number">
+    <span id="letter"></span>
+    <span id="number"></span>
+</div>
 <div id="buttons">
     <div>
         <button id="btn-bingo">B I N G O</button>
@@ -62,7 +67,7 @@
         <button id="btn-generate">NEW CARD</button>
     </div>
     <div>
-        <button id="btn-number">GET NUMBER</button>
+        <button id="btn-number">CALL NUMBERS</button>
     </div>
 </div>
 </body>

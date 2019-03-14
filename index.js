@@ -1,10 +1,12 @@
-const express = require('express');
-const app = express();
-const path = require('path');
-
+var express = require('express');
+var path = require('path');
+var app = express();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 var bCards = require("./libraries/b-cards");
+var bNumbers = require("./libraries/b-numbers");
 
-app.use('/public',express.static(__dirname +'/public'));
+app.use(express.static(__dirname));
 
 /*Main page application*/
 app.get('/', function (req, res) {
@@ -17,11 +19,18 @@ app.post('/generate', function (req, res) {
 });
 
 /*Generate a new bingo card*/
-app.post('/get-number', function (req, res) {
-    //....
+app.post('/get-numbers', function (req, res) {
+    var intervalGenerate = setInterval(function() {
+        io.emit('randNumbers', new bNumbers().generateNumber());
+    }, 5000);
+});
+
+/*Connection to socket*/
+io.on('connection', function () {
+    console.log('a user is connected')
 });
 
 /*Set listening port*/
-app.listen(3000, function() {
-   console.log('Application has been started on port 3000!'); 
+var server = http.listen(3000,function () {
+    console.log('server is running on port', server.address().port);
 });

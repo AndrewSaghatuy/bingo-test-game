@@ -1,4 +1,11 @@
 $(document).ready(function() {
+    /*Connection to the socket*/
+    var socket = io();
+    socket.on('randNumbers', function(msg) {
+        $('#letter').html(msg.bingoLetter);
+        $('#number').html(msg.number);
+    });
+
     /*Generate bingo cards*/
     $("#btn-generate").click(function () {
         $.post("/generate",
@@ -16,6 +23,7 @@ $(document).ready(function() {
     
     /*Get bingo number*/
     $('#btn-number').click(function () {
-        
+        $.post("/get-numbers");
+        $('#btn-number').hide();
     });
 });
