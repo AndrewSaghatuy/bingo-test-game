@@ -31,18 +31,13 @@ body{
 }
 
 #buttons{
-    display: block;
-    position: relative;
-    margin: 10px auto;
-    width: 200px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#buttons div {
-    position: relative;
-    float: left;
-}
-
-#btn-bingo, #btn-generate{
+#btn-bingo, #btn-generate, #btn-number{
     width:100px;
     height:100px;
     background:#0D0;
@@ -55,6 +50,11 @@ body{
 
 #btn-generate {
     background: #bcaa2d;
+}
+
+#btn-number {
+    background-color: #1bbebc;
+    display: none;
 }
 
 #free {

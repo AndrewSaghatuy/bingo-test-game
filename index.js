@@ -16,7 +16,12 @@ app.post('/generate', function (req, res) {
     res.send({'cardsNumbers' : new bCards().anCard()});
 });
 
-/*Set localhost port*/
+/*Generate a new bingo card*/
+app.post('/get-number', function (req, res) {
+    //....
+});
+
+/*Set listening port*/
 app.listen(3000, function() {
    console.log('Application has been started on port 3000!'); 
 });
